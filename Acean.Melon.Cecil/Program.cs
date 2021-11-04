@@ -78,33 +78,5 @@ namespace Acean.Melon.Cecil
             string.IsNullOrEmpty(self.Namespace)
                 ? self.Name
                 : self.Namespace + '.' + self.Name;
-
-        /*
-         *         public static object Contact(string response_str)
-        {
-            Console.WriteLine("[Acean] Executing modified Contact.");
-
-            object info = orig_Contact(response_str);
-
-            Assembly icagAsm = AppDomain.CurrentDomain.GetAssemblies().Single(
-                x => x.GetName().Name == "Il2CppAssemblyGenerator"
-            );
-
-            Type infoStruct = icagAsm.GetType(
-                "MelonLoader.Il2CppAssemblyGenerator.RemoteAPI.DefaultHostInfo.ResponseStruct"
-            );
-
-            void QuickSet(string field, object value) => infoStruct.GetField(
-                field, BindingFlags.NonPublic | BindingFlags.Instance
-            )?.SetValue(info, value);
-
-            QuickSet("ForceDumperVersion", null);
-            QuickSet("ForceUnhollowerVersion", null);
-
-            Console.WriteLine("[Acean] Executed modified Contact.");
-
-            return info;
-        }
-         */
     }
 }
